@@ -1,4 +1,4 @@
-# Workflow
+# Workflow do projeto
 
 Utilizamos uma adaptação do Git Flow para garantir que o código em produção esteja sempre estável.
 
