@@ -1,7 +1,5 @@
-import tailwindcss from "@tailwindcss/vite";
-
 // Introdução básica aos conceitos de Arq Org
-export const introduçãoData = {
+export const introducaoData = {
     title: "A Hase do Hardware",
     analogiaTitulo: "A Analogia da Construção",
     // Elemtenos referentes a Arq
@@ -30,7 +28,7 @@ export const introduçãoData = {
 };
 
 // Diferenças entre arquiteturas Risc e Cisc
-export const diferencas = {
+export const diferencasData = {
     sectionTitle: " Arquituras RISC vs CISC e seus Paradigmas de Processamento",
     // Elementos q compoe cada uma das arquiteturas
     paradigmas: [
@@ -81,7 +79,7 @@ export const diferencas = {
     ]
 };
 
-export const vonNeumman = {
+export const vonNeumannData = {
     title: "A Arquitetura de Von Neumann",
     
     gargalo: {
@@ -116,7 +114,7 @@ export const vonNeumman = {
             funcao: "Pontes de comunicação com o mundo externo. Permitem a entrada de novos dados (teclado, sensores) e a saída de resultados processados (monitores).",
             style: "border border-slate-700 bg-slate-900/60 p-4 rounded-lg"
         }
-    ]
+    ],
     tailwindClasses: {
         destaqueGargalo: "text-amber-400 font-mono font-semibold bg-amber-400/10 px-1 rounded",
         componenteTitle: "text-slate-100 font-mono font-bold text-lg flex items-center gap-2",
