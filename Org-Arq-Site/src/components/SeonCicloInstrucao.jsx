@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { cicloData } from '../data/cicloInstrucao.js';
+import DiagramaCPU from '../assets/DiagramCPU.jsx';
 import Visualizacao from '../assets/Visualizacao.jsx';
 export default function SeonCicloInstrucao(){
     const [passoAtivo, setPassoAtivo] = useState(0);
     const passo = cicloData.passos[passoAtivo];
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 w-full items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 w-full items-start justify-items-center">
             <div className={`bg-slate-950/80 border ${passo.cores.borda} ${passo.cores.glow} p-6 rounded-xl transition-all duration-300 backdrop-blur-sm min-h-[410px]`}>
                 
                 <div className="flex justify-between items-center mb-6">
@@ -61,6 +62,9 @@ export default function SeonCicloInstrucao(){
                 </div>
             </div>
             <Visualizacao passoAtivo={passoAtivo} />
+            <div className="md:col-span-2 w-full max-w-xl">
+                <DiagramaCPU passoAtivo={passoAtivo} />
+            </div>
         </div>
     );
 }

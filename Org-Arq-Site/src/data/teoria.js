@@ -100,19 +100,19 @@ export const vonNeumannData = {
             sigla: "UC",
             // Queria colocar "cerebro administrativo" entre aspas mas nao sei se \" funciona pra colocar o caracter literal, tmj :)
             funcao: "É o cérebro administrativo. Ela busca a instrução na memória, decodifica seu significado e coordena o fluxo de sinais para os demais componentes.",
-            style: "border border-emerald-500/20 bg-slate-900/60 p-4 rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.05)]"
+            style: "border border-emerald-500/20 bg-slate-900/60 p-4 rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.05)] backdrop-blur-sm"
         },
         {
             nome: "Unidade Lógica e Aritmética",
             sigla: "ULA",
             funcao: "O motor de execução. Realiza operações matemáticas fundamentais (soma, subtração) e testes lógicos booleanos (AND, OR, comparações).",
-            style: "border border-amber-500/20 bg-slate-900/60 p-4 rounded-lg shadow-[0_0_15px_rgba(245,158,11,0.05)]"
+            style: "border border-amber-500/20 bg-slate-900/60 p-4 rounded-lg shadow-[0_0_15px_rgba(245,158,11,0.05)] backdrop-blur-sm"
         },
         {
             nome: "Dispositivos de E/S",
             sigla: "I/O",
             funcao: "Pontes de comunicação com o mundo externo. Permitem a entrada de novos dados (teclado, sensores) e a saída de resultados processados (monitores).",
-            style: "border border-slate-700 bg-slate-900/60 p-4 rounded-lg"
+            style: "border border-slate-700 bg-slate-900/60 p-4 rounded-lg backdrop-blur-sm"
         }
     ],
     tailwindClasses: {
