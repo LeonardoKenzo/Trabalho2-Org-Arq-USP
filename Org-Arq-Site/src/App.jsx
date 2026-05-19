@@ -1,10 +1,26 @@
 import { useState } from 'react'
 import './App.css'
 import SeonTeoria from './components/SeonTeoria';
+import Particles from './components/Particles';
 
 export default function App() {
   return (
     <div className='min-h-screen bg-slate-900 text-slate-100 font-sans p-6 md:p-12 selection:bg-cyan-500/30'>
+
+      <div className="fixed inset-0 z-0">
+        <Particles
+          particleColors={["#22d3ee", "#ffffff", "#475569"]} // Cyan, White, and Slate particles
+          particleCount={500}
+          particleSpread={12}
+          speed={0.1}
+          particleBaseSize={80}
+          moveParticlesOnHover={true} // Turned off by default so background doesn't block text interactions
+          alphaParticles={true}
+          disableRotation={false}
+        />
+      </div>
+
+      <div className="relative z-10">
       {/*Heaader*/}
       <header className="mb-12 border-b border-slate-800 pb-6 flex justify-between items-center">
         <div>
@@ -23,6 +39,7 @@ export default function App() {
         </h2>
         <SeonTeoria />
       </main>
+      </div>
     </div>
   );
 }
