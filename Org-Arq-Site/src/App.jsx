@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import SeonTeoria from './components/SeonTeoria';
 import Particles from './components/Particles';
-
+import SeonCicloInstrucao from './components/SeonCicloInstrucao';
 export default function App() {
   return (
     <div className='min-h-screen bg-slate-900 text-slate-100 font-sans p-6 md:p-12 selection:bg-cyan-500/30'>
@@ -34,10 +34,19 @@ export default function App() {
       </header>
 
       <main>
-        <h2 className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
-          Teoria
-        </h2>
-        <SeonTeoria />
+        <section>
+          <h2 className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
+            Teoria
+          </h2>
+          <SeonTeoria />
+        </section>
+
+        <section>
+          <h2 className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
+              Ciclo de Instrução
+          </h2>
+          <SeonCicloInstrucao />
+        </section>
       </main>
       </div>
     </div>
