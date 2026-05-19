@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { cicloData } from '../data/cicloInstrucao.js';
-
+import Visualizacao from '../assets/Visualizacao.jsx';
 export default function SeonCicloInstrucao(){
     const [passoAtivo, setPassoAtivo] = useState(0);
     const passo = cicloData.passos[passoAtivo];
 
     return (
-        <div className="grid lg:grid-cols-3 gap-6 mt-8">
-            <div className={`lg:col-span-2 bg-slate-950/80 border ${passo.cores.borda} ${passo.cores.glow} p-6 rounded-xl transition-all duration-300 backdrop-blur-sm`}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 w-full items-start">
+            <div className={`bg-slate-950/80 border ${passo.cores.borda} ${passo.cores.glow} p-6 rounded-xl transition-all duration-300 backdrop-blur-sm`}>
                 
                 <div className="flex justify-between items-center mb-6">
                     <span className={`font-mono text-xs font-bold ${passo.cores.texto} tracking-widest`}>
@@ -60,38 +60,8 @@ export default function SeonCicloInstrucao(){
 
                 </div>
             </div>
+            <Visualizacao passoAtivo={passoAtivo} />
 
-            <div className="bg-slate-950/80 backdrop-blur-sm border border-slate-800 p-6 rounded-xl flex flex-col justify-between">
-                <div>
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-4">
-                        Estado dos Registradores
-                    </h4>
-                    <div className='space-y-3'>
-                        {cicloData.glossarioRegistradores.map((reg) => {
-                            const estaAtivo = passo.registradoresAfetados.includes(reg.sigla);
-                            return (
-                                <div
-                                    key={reg.sigla}
-                                    className={`p-3 rounded border transition-all ${estaAtivo ? 'bg-cyan-500/10 border-cyan-500/40 shadow-[0_0_10px_rgba(34,211,238,0.05)]' : 'bg-slate-900/40 border-slate-800/60'}`}
-                                    >
-                                        <div className="flex justify-between items-center mb-1">
-                                            <span className={`font-mono text-sm font-bold ${estaAtivo ? 'text-cyan-400' : 'text-slate-300'}`}>
-                                                {reg.sigla}
-                                            </span>
-                                            {estaAtivo && <span className="text-[10px] font-mono text-cyan-500 animate-pulse">ATIVO</span>}
-                                        </div>
-                                        <span className="text-[11px] text-slate-500 block font-mono">
-                                            {reg.nome}
-                                        </span>
-                                        <p className="text-slate-400 text-xs mt-1">
-                                            {reg.funcao}
-                                        </p>
-                                    </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </div>
         </div>
     );
 }
