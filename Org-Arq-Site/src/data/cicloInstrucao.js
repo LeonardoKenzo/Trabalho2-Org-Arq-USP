@@ -1,7 +1,7 @@
 export const cicloData = {
     passos: [
         {
-            fases: "FETCH",
+            fase: "FETCH",
             titulo: "1. Busca da Instrução",
             descricao: "O processador lê a instrução residente na memória RAM utilizando o endereço apontado pelo Program Counter (PC).",
             detalhesHardware: "O endereço do PC é enviado ao Barramento de Endereços. A memória retorna o dado pelo Barramento de Dados para o Registrador de Instrução (IR). O PC é incrementado.",
