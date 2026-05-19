@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import SeonTeoria from './components/SeonTeoria';
-import Particles from './components/Particles';
+import Particles from './assets/Particles';
 import SeonCicloInstrucao from './components/SeonCicloInstrucao';
 export default function App() {
   return (

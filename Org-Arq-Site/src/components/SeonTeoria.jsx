@@ -1,6 +1,6 @@
 import React from 'react';
 import { introducaoData, diferencasData, vonNeumannData } from '../data/teoria.js';
-import SplitText from './SplitText.jsx';
+import SplitText from '../assets/SplitText.jsx';
 export default function SeonTeoria(){
     return (
         <div className='space-y-12'>
@@ -88,10 +88,10 @@ export default function SeonTeoria(){
                         {vonNeumannData.componentes.map((comp, idx) => (
                             <div key={idx} className={comp.style}>
                                 <div className='flex justify-between items-start mb-3'>
-                                    <h5 className="text-slate-200 font-mono font-bold text-base">{comp.nome}</h5>
-                                    <span className={vonNeumannData.tailwindClasses.componenteSigla}>{comp.sigla}</span>
+                                    <h5 className="text-slate-200 font-mono font-bold text-base"><SplitText text = {comp.nome}  textAlign='left' duration={.5} splitType='lines' delay={10} /> </h5>
+                                    <span className={vonNeumannData.tailwindClasses.componenteSigla}><SplitText text = {comp.sigla}  textAlign='left' duration={.5} splitType='lines' delay={10} /></span>
                                 </div>
-                                <p className="text-slate-400 text-xs leading-relaxed">{comp.funcao}</p>
+                                <p className="text-slate-400 text-xs leading-relaxed"><SplitText text = {comp.funcao}  textAlign='left' duration={.5} splitType='lines' delay={10} /></p>
                             </div>
                         ))}
                 </div>
