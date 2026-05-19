@@ -93,7 +93,7 @@ export const vonNeumannData = {
             nome: "Memória Principal",
             sigla: "RAM (Random Acess Memory)",
             funcao: "Armazenar temporariamente ambos os dados e instruções que serão processados pelo CPU. É um espaço de enderaçamento linear e volátil.",
-            style: "border border-cyan-500/20 bg-slate-900/60 p-4 rounded-lg shadow-[0_0_15px_rgba(34,211,238,0.05)]"
+            style: "border border-cyan-500/20 bg-slate-900/60 p-4 rounded-lg shadow-[0_0_15px_rgba(34,211,238,0.05)] backdrop-blur-sm"
         },
         {
             nome: "Unidade de Controle",
