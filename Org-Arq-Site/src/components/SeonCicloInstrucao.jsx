@@ -7,7 +7,7 @@ export default function SeonCicloInstrucao(){
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 w-full items-start">
-            <div className={`bg-slate-950/80 border ${passo.cores.borda} ${passo.cores.glow} p-6 rounded-xl transition-all duration-300 backdrop-blur-sm`}>
+            <div className={`bg-slate-950/80 border ${passo.cores.borda} ${passo.cores.glow} p-6 rounded-xl transition-all duration-300 backdrop-blur-sm min-h-[410px]`}>
                 
                 <div className="flex justify-between items-center mb-6">
                     <span className={`font-mono text-xs font-bold ${passo.cores.texto} tracking-widest`}>
@@ -61,7 +61,6 @@ export default function SeonCicloInstrucao(){
                 </div>
             </div>
             <Visualizacao passoAtivo={passoAtivo} />
-
         </div>
     );
 }

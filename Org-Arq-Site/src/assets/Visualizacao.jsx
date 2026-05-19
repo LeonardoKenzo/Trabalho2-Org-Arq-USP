@@ -17,9 +17,9 @@ export default function Visualizacao({ passoAtivo }) {
     { id: 'MAR', nome: 'MAR', tipo: 'cpu', colSpan: 'col-span-1', desc: 'Memory Address Register. Aponta para onde a RAM deve olhar.' },
     { id: 'MBR', nome: 'MBR', tipo: 'cpu', colSpan: 'col-span-1', desc: 'Memory Buffer Register. O "saguão" de entrada/saída de dados da CPU.' },
     { id: 'UC', nome: 'Unidade de Controle', tipo: 'cpu', colSpan: 'col-span-2', desc: 'O cérebro. Lê o IR no passo 2 e envia sinais para a ULA no passo 3.' },
-    { id: 'ULA', nome: 'ULA / ALU', tipo: 'cpu', colSpan: 'col-span-2', desc: 'Realiza os cálculos matemáticos durante a fase de Execução (Passo 3).' },
+    { id: 'ULA', nome: 'ULA / ALU', tipo: 'cpu', colSpan: 'col-span-2', desc: 'Realiza as operações lógicas e aritméticas durante a fase de Execução (Passo 3).' },
     { id: 'REG', nome: 'Registradores (Gerais)', tipo: 'cpu', colSpan: 'col-span-2', desc: 'Armazenamento ultra-rápido para os cálculos da ULA.' },
-    { id: 'MEM', nome: 'Memória Principal (RAM)', tipo: 'memoria', rowSpan: 'row-span-4', colSpan: 'col-span-2', desc: 'Guarda as instruções e dados do programa. Responde aos pedidos da CPU.' }
+    { id: 'MEM', nome: 'Memória Principal (RAM)', tipo: 'memoria', rowSpan: 'row-span-1', colSpan: 'col-span-2', desc: 'Guarda as instruções e dados do programa. Responde aos pedidos da CPU.' }
   ];
 
   return (

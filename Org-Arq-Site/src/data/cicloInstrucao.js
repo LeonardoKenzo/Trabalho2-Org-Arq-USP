@@ -30,7 +30,7 @@ export const cicloData = {
             fase: "EXECUTE",
             titulo: "3. Execução",
             descricao: "A Unidade de Controle envia os sinais de comando necessários e ativa a ULA para realizar a operação física.",
-            detalhesHardware: "A ULA recebe os dados dos registradores de uso geral e computa a operação lógica ou aritmética requerida pela instrução.",
+            detalhesHardware: "A ULA recebe os dados dos registradores de uso geral e computa a operação lógica ou aritmética requerida pela instrução e atualiza as flags (Zero, Negative, Overflow).",
             registradoresAfetados: ["ULA", "Registradores de Uso Geral", "Flags Register"],
             logText: "SYS_LOG: Sinais de controle enviados para a ULA. Operação lógica/aritmética processada com sucesso. Atualizando Flags.",
             cores: {
@@ -42,8 +42,8 @@ export const cicloData = {
         {
             fase: "WRITEBACK",
             titulo: "4. Escrita dos Resultados",
-            descricao: "O resultado gerado pela ULA é persistido de volta em um registrador interno ou em uma posição específica de memória.",
-            detalhesHardware: "O barramento interno é ativado para gravar o dado final, atualizando as flags de status do processador (como Zero ou Overflow).",
+            descricao: "O resultado gerado pela ULA é persistido de volta em um registrador interno ou em uma posição específica de memória",
+            detalhesHardware: "O barramento interno é ativado para gravar o dado final no registrador destino.",
             registradoresAfetados: ["Registrador Destino"],
             logText: "SYS_LOG: Resultado gravado no registrador destino. Ciclo finalizado.",
             cores: {
