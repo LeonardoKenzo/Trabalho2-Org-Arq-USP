@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
  
-export default function DiagramaCPU({ passoAtivo }) {
+function DiagramaCPU({ passoAtivo }) {
 
   const ativosPorPasso = {
     0: ['PC', 'MAR', 'MEM', 'MBR', 'IR'],
@@ -261,3 +261,5 @@ export default function DiagramaCPU({ passoAtivo }) {
     </div>
   );
 }
+
+export default memo(DiagramaCPU);

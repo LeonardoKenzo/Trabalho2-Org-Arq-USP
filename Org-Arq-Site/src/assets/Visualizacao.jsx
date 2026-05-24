@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 
-export default function Visualizacao({ passoAtivo }) {
+function Visualizacao({ passoAtivo }) {
   const [componenteSelecionado, setComponenteSelecionado] = useState(null);
 
   const ativosPorPasso = {
@@ -84,3 +84,5 @@ export default function Visualizacao({ passoAtivo }) {
     </div>
   );
 }
+
+export default memo(Visualizacao);

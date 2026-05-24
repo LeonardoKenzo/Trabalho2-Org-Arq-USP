@@ -119,7 +119,7 @@ export default function SeonTeoria() {
                 </h3>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                    {/* Seção Nova: O que é a arquitetura */}
+                    {/* Seção Nova: O que é a arquitetura de von neymmnan */}
                     <div 
                         onClick={() => navigate('/topico/von-neumann')}
                         className="bg-slate-950/40 border border-slate-800/80 p-5 rounded-xl cursor-pointer hover:bg-slate-900/40 hover:border-cyan-500/30 hover:scale-[1.01] transition-all group relative"

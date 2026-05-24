@@ -80,7 +80,7 @@ export default function DetalhesTopico() {
         >
             {/* --- SIDEBAR DE NAVEGAÇÃO --- */}
             <aside className="w-full lg:w-64 shrink-0 lg:sticky lg:top-8 z-20">
-                {/* Botão Mobile (Hambúrguer Textual) */}
+                {/* Botão Mobile */}
                 <button 
                     onClick={() => setMenuAberto(!menuAberto)}
                     className="lg:hidden w-full flex justify-between items-center bg-slate-900 border border-slate-700 p-3 rounded font-mono text-xs text-slate-300 hover:bg-slate-800 transition-colors mb-4"
@@ -141,7 +141,7 @@ export default function DetalhesTopico() {
                     </h1>
                 </header>
 
-                {/* Bloco 1: História */}
+                {/* História */}
                 <section className={`bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm ${topico.estilo.bgGlow}`}>
                     <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
                         <span className={topico.estilo.textoPrinc}>#</span> História e Origem
@@ -151,7 +151,7 @@ export default function DetalhesTopico() {
                     </p>
                 </section>
 
-                {/* Bloco 2: Aprofundamento */}
+                {/* Aprofundamento */}
                 <section className="bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm">
                     <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
                         <span className={topico.estilo.textoPrinc}>#</span> Aprofundamento Técnico
@@ -161,7 +161,7 @@ export default function DetalhesTopico() {
                     </p>
                 </section>
 
-                {/* Bloco 3: Exemplos */}
+                {/* Exemplos */}
                 <section className="bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm">
                     <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
                         <span className={topico.estilo.textoPrinc}>#</span> Aplicações Práticas
