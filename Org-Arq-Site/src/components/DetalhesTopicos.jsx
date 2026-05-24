@@ -1,7 +1,20 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { detalhesData } from '../data/conteudoDetalhado';
 import SplitText from '../assets/SplitText.jsx';
+
+const pageVariants = {
+  initial: { opacity: 0, y: 15 },
+  in: { opacity: 1, y: 0 },
+  out: { opacity: 0, y: -15 }
+};
+
+const pageTransition = {
+  type: 'tween',
+  ease: 'easeInOut',
+  duration: 0.3
+};
 
 export default function DetalhesTopico() {
     // Pega o ID da URL (ex: 'arquitetura', 'risc')
@@ -15,22 +28,32 @@ export default function DetalhesTopico() {
 
     if (!topico) {
         return (
-            <div className="flex flex-col items-center justify-center min-h-[50vh] text-slate-400 font-mono">
+            <motion.div 
+                initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}
+                className="flex flex-col items-center justify-center min-h-[50vh] text-slate-400 font-mono"
+            >
                 <p className="text-xl mb-4">[ ERRO 404: TÓPICO NÃO ENCONTRADO ]</p>
                 <Link to="/" className="text-cyan-400 hover:underline border border-cyan-500/30 px-4 py-2 rounded bg-cyan-950/30">
                     RETORNAR
                 </Link>
-            </div>
+            </motion.div>
         );
     }
 
     return (
-        <div className="max-w-4xl mx-auto w-full animate-fade-in pb-12">
+        <motion.div 
+            initial="initial" 
+            animate="in" 
+            exit="out" 
+            variants={pageVariants} 
+            transition={pageTransition}
+            className="max-w-4xl mx-auto w-full pb-12"
+        >
             {/* Botão de Voltar */}
             <Link 
                 to="/" 
                 className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-cyan-400 transition-colors mb-10 group"
-            >
+                >
                 <span className="group-hover:-translate-x-1 transition-transform">&lt;-</span> 
                 [ RETORNAR_A_HOME ]
             </Link>
@@ -82,6 +105,6 @@ export default function DetalhesTopico() {
                     </ul>
                 </section>
             </main>
-        </div>
+        </motion.div>
     );
 }

@@ -1,13 +1,34 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import './App.css';
 import SeonTeoria from './components/SeonTeoria.jsx';
 import Particles from './assets/Particles.jsx';
 import SeonCicloInstrucao from './components/SeonCicloInstrucao.jsx';
 import DetalhesTopico from './components/DetalhesTopicos.jsx';
 
-function HomePage(){
+// Definição da animação padrão das páginas (deslizar e esmaecer)
+const pageVariants = {
+  initial: { opacity: 0, y: 15 },
+  in: { opacity: 1, y: 0 },
+  out: { opacity: 0, y: -15 }
+};
+
+const pageTransition = {
+  type: 'tween',
+  ease: 'easeInOut',
+  duration: 0.3
+};
+
+function HomePage() {
   return (
-    <main className="animate-fade-in">
+    <motion.main 
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       <section className='mb-6 border-b border-slate-800 pb-6'>
         <h2 className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
           Teoria
@@ -21,7 +42,20 @@ function HomePage(){
         </h2>
         <SeonCicloInstrucao />
       </section>
-    </main>
+    </motion.main>
+  );
+}
+
+function AnimatedRoutes() {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/topico/:idTopico" element={<DetalhesTopico />} /> 
+      </Routes>
+    </AnimatePresence>
   );
 }
 
@@ -56,12 +90,7 @@ export default function App() {
             </Link>
           </header>
 
-          {/* Sistema de Roteamento */}
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            {/* Rota dinâmica. O :idTopico vira uma variável lá dentro do componente */}
-            <Route path="/topico/:idTopico" element={<DetalhesTopico />} /> 
-          </Routes>
+          <AnimatedRoutes />
         </div>
       </div>
     </Router>

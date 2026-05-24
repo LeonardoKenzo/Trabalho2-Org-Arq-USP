@@ -113,26 +113,52 @@ export default function SeonTeoria() {
 
             {/* Von Neumann */}
             <div className='space-y-6'>
-                {/* Card do Gargalo */}
-                <div 
-                    onClick={() => navigate('/topico/von-neumann')}
-                    className="bg-amber-500/5 border border-amber-500/20 p-5 rounded-xl cursor-pointer hover:bg-amber-500/10 hover:border-amber-500/40 hover:scale-[1.01] transition-all group relative"
-                >
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="text-[10px] font-mono text-amber-500/60 border border-amber-500/30 px-2 py-0.5 rounded-full">
-                            [ Saiba Mais ]
-                        </span>
+                <h3 className="text-lg font-mono text-slate-200 flex items-center gap-2 border-b border-slate-800/60 pb-3">
+                    <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+                    <SplitText text={vonNeumannData.title} textAlign='left' duration={.8} splitType='words' delay={20} />
+                </h3>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                    {/* Seção Nova: O que é a arquitetura */}
+                    <div 
+                        onClick={() => navigate('/topico/von-neumann')}
+                        className="bg-slate-950/40 border border-slate-800/80 p-5 rounded-xl cursor-pointer hover:bg-slate-900/40 hover:border-cyan-500/30 hover:scale-[1.01] transition-all group relative"
+                    >
+                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span className="text-[10px] font-mono text-cyan-500/60 border border-cyan-500/30 px-2 py-0.5 rounded-full">
+                                [ Saiba Mais ]
+                            </span>
+                        </div>
+
+                        <h4 className="text-cyan-400 font-mono font-bold text-sm uppercase tracking-wider mb-2">
+                            <SplitText text={vonNeumannData.introducao.titulo} textAlign='left' duration={.8} splitType='words' delay={20} />
+                        </h4>
+                        <p className="text-slate-300 text-sm leading-relaxed">
+                            <SplitText text={vonNeumannData.introducao.descricao} textAlign='left' duration={.5} splitType='lines' delay={10} />
+                        </p>
                     </div>
 
-                    <h4 className="text-amber-500 font-mono font-bold text-sm uppercase tracking-wider mb-2">
-                        <SplitText text={vonNeumannData.gargalo.titulo} textAlign='left' duration={.8} splitType='words' delay={20} />
-                    </h4>
-                    <p className="text-slate-300 text-sm max-w-3xl mb-2">
-                        <SplitText text={vonNeumannData.gargalo.descricao} textAlign='left' duration={.5} splitType='lines' delay={10} />
-                    </p>
-                    <p className="text-slate-400 text-xs italic">
-                        <SplitText text={vonNeumannData.gargalo.consequencia} textAlign='left' duration={.5} splitType='lines' delay={10} />
-                    </p>
+                    {/* Card do Gargalo */}
+                    <div 
+                        onClick={() => navigate('/topico/von-neumann')}
+                        className="bg-amber-500/5 border border-amber-500/20 p-5 rounded-xl cursor-pointer hover:bg-amber-500/10 hover:border-amber-500/40 hover:scale-[1.01] transition-all group relative"
+                    >
+                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span className="text-[10px] font-mono text-amber-500/60 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                                [ Saiba Mais ]
+                            </span>
+                        </div>
+
+                        <h4 className="text-amber-500 font-mono font-bold text-sm uppercase tracking-wider mb-2">
+                            <SplitText text={vonNeumannData.gargalo.titulo} textAlign='left' duration={.8} splitType='words' delay={20} />
+                        </h4>
+                        <p className="text-slate-300 text-sm max-w-3xl mb-2 leading-relaxed">
+                            <SplitText text={vonNeumannData.gargalo.descricao} textAlign='left' duration={.5} splitType='lines' delay={10} />
+                        </p>
+                        <p className="text-slate-400 text-xs italic">
+                            <SplitText text={vonNeumannData.gargalo.consequencia} textAlign='left' duration={.5} splitType='lines' delay={10} />
+                        </p>
+                    </div>
                 </div>
 
                 {/* Grid dos Componentes de Hardware */}

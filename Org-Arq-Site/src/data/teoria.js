@@ -82,6 +82,11 @@ export const diferencasData = {
 export const vonNeumannData = {
     title: "A Arquitetura de Von Neumann",
     
+    introducao: {
+        titulo: "O Conceito de Programa Armazenado",
+        descricao: "Proposta pelo matemático John von Neumann em 1945, esta arquitetura define a estrutura conceitual de quase todos os computadores modernos. Sua grande revolução foi unificar o armazenamento: em vez de reconfigurar o hardware fisicamente para cada tarefa, as instruções do programa e os dados de trabalho residem juntos no mesmo espaço de memória linear, tornando o computador uma máquina digital universal e reprogramável."
+    },
+    
     gargalo: {
         titulo: "O Gargalo de Von Neumann",
         descricao: "O principal limitador de desempenho dos computadores modernos. Ocorre porque os dados e as instruções compartilham o mesmo barramento físico para chegar até o processador.",
@@ -91,14 +96,13 @@ export const vonNeumannData = {
     componentes: [
         {
             nome: "Memória Principal",
-            sigla: "RAM (Random Acess Memory)",
-            funcao: "Armazenar temporariamente ambos os dados e instruções que serão processados pelo CPU. É um espaço de enderaçamento linear e volátil.",
+            sigla: "RAM (Random Access Memory)",
+            funcao: "Armazenar temporariamente ambos os dados e instruções que serão processados pelo CPU. É um espaço de endereçamento linear e volátil.",
             style: "border border-cyan-500/20 bg-slate-900/60 p-4 rounded-lg shadow-[0_0_15px_rgba(34,211,238,0.05)] backdrop-blur-sm"
         },
         {
             nome: "Unidade de Controle",
             sigla: "UC",
-            // Queria colocar "cerebro administrativo" entre aspas mas nao sei se \" funciona pra colocar o caracter literal, tmj :)
             funcao: "É o cérebro administrativo. Ela busca a instrução na memória, decodifica seu significado e coordena o fluxo de sinais para os demais componentes.",
             style: "border border-emerald-500/20 bg-slate-900/60 p-4 rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.05)] backdrop-blur-sm"
         },
@@ -120,4 +124,4 @@ export const vonNeumannData = {
         componenteTitle: "text-slate-100 font-mono font-bold text-lg flex items-center gap-2",
         componenteSigla: "text-xs px-1.5 py-0.5 rounded font-bold font-mono bg-slate-800 border"
     }
-}
+};
