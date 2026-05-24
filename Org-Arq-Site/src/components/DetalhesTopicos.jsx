@@ -32,7 +32,7 @@ export default function DetalhesTopico() {
                 className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-cyan-400 transition-colors mb-10 group"
             >
                 <span className="group-hover:-translate-x-1 transition-transform">&lt;-</span> 
-                [ RETORNAR_AO_MENU ]
+                [ RETORNAR_A_HOME ]
             </Link>
 
             {/* Cabeçalho do Tópico */}
@@ -45,10 +45,10 @@ export default function DetalhesTopico() {
                 </h1>
             </header>
 
-            {/* Containers de Conteúdo (Placeholders para o redator) */}
+            {/* Containers de Conteúdo (Placeholders) */}
             <main className="space-y-8">
                 {/* Bloco 1: História */}
-                <section className={`bg-slate-950/60 border border-slate-800 p-8 rounded-xl backdrop-blur-sm ${topico.estilo.bgGlow}`}>
+                <section className={`bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm ${topico.estilo.bgGlow}`}>
                     <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
                         <span className={topico.estilo.textoPrinc}>#</span> História e Origem
                     </h2>
@@ -58,7 +58,7 @@ export default function DetalhesTopico() {
                 </section>
 
                 {/* Bloco 2: Aprofundamento */}
-                <section className="bg-slate-950/60 border border-slate-800 p-8 rounded-xl backdrop-blur-sm">
+                <section className="bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm">
                     <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
                         <span className={topico.estilo.textoPrinc}>#</span> Aprofundamento Técnico
                     </h2>
@@ -68,7 +68,7 @@ export default function DetalhesTopico() {
                 </section>
 
                 {/* Bloco 3: Exemplos */}
-                <section className="bg-slate-950/60 border border-slate-800 p-8 rounded-xl backdrop-blur-sm">
+                <section className="bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm">
                     <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
                         <span className={topico.estilo.textoPrinc}>#</span> Aplicações Práticas
                     </h2>

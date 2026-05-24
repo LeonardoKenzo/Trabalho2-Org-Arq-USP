@@ -88,7 +88,7 @@ export default function SeonTeoria() {
                                 <SplitText text={p.introducao} textAlign='left' duration={.8} splitType='words' delay={20} />
                             </p>
 
-                            <div className="grid grid-cols-2 gap-4 pt-2">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                                 <div>
                                     <h5 className="text-xs font-mono text-emerald-400 font-bold mb-2">
                                         <SplitText text={'PROS'} textAlign='left' duration={.8} splitType='words' delay={20} />
