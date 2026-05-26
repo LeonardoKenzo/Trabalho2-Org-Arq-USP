@@ -35,7 +35,7 @@ const menuNavegacao = [
     {
         categoria: "Von Neumann",
         items: [
-            { id: "von-neumann", nome: "Visão Geral" },
+            { id: "vonneumann", nome: "Visão Geral" },
             { id: "ram", nome: "Memória RAM" },
             { id: "uc", nome: "Unidade de Controle" },
             { id: "ula", nome: "ULA" },
