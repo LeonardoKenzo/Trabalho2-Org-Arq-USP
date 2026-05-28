@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { detalhesData } from '../data/conteudoDetalhado';
 import SplitText from '../assets/SplitText.jsx';
 
@@ -16,7 +16,6 @@ const pageTransition = {
   duration: 0.3
 };
 
-// Mapa de navegação lateral
 const menuNavegacao = [
     {
         categoria: "Fundamentos",
@@ -49,10 +48,9 @@ export default function DetalhesTopico() {
     const topico = detalhesData[idTopico];
     const [menuAberto, setMenuAberto] = useState(false);
 
-    // Rola para o topo sempre que o ID do tópico mudar
     useEffect(() => {
         window.scrollTo(0, 0);
-        setMenuAberto(false); // Fecha o menu mobile ao navegar
+        setMenuAberto(false);
     }, [idTopico]);
 
     if (!topico) {
@@ -80,7 +78,6 @@ export default function DetalhesTopico() {
         >
             {/* --- SIDEBAR DE NAVEGAÇÃO --- */}
             <aside className="w-full lg:w-64 shrink-0 lg:sticky lg:top-8 z-20">
-                {/* Botão Mobile */}
                 <button 
                     onClick={() => setMenuAberto(!menuAberto)}
                     className="lg:hidden w-full flex justify-between items-center bg-slate-900 border border-slate-700 p-3 rounded font-mono text-xs text-slate-300 hover:bg-slate-800 transition-colors mb-4"
@@ -89,9 +86,7 @@ export default function DetalhesTopico() {
                     <span className="text-cyan-400">{menuAberto ? '[-]' : '[+]'}</span>
                 </button>
 
-                {/* Lista de Links (Escondida no mobile se !menuAberto) */}
                 <div className={`flex-col gap-6 ${menuAberto ? 'flex' : 'hidden'} lg:flex bg-slate-950/50 p-5 rounded-xl border border-slate-800 backdrop-blur-sm`}>
-                    
                     <Link 
                         to="/" 
                         className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-cyan-400 transition-colors pb-4 border-b border-slate-800 group"
@@ -129,9 +124,8 @@ export default function DetalhesTopico() {
                 </div>
             </aside>
 
-            {/* --- CONTEÚDO PRINCIPAL --- */}
+            {/* --- CONTEÚDO PRINCIPAL (DINÂMICO) --- */}
             <main className="flex-1 min-w-0 w-full space-y-8">
-                {/* Cabeçalho do Tópico */}
                 <header className={`border-l-4 ${topico.estilo.borda} pl-6 mb-12`}>
                     <span className={`text-xs font-mono ${topico.estilo.textoSec} block mb-2 uppercase tracking-widest`}>
                         // {topico.categoria}
@@ -141,40 +135,38 @@ export default function DetalhesTopico() {
                     </h1>
                 </header>
 
-                {/* História */}
-                <section className={`bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm ${topico.estilo.bgGlow}`}>
-                    <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
-                        <span className={topico.estilo.textoPrinc}>#</span> História e Origem
-                    </h2>
-                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">
-                        {topico.conteudo.historia}
-                    </p>
-                </section>
+                {/* Renderização Automática das Seções */}
+                {topico.secoes && topico.secoes.map((secao, index) => (
+                    <section 
+                        key={index} 
+                        className={`bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm ${
+                            secao.destaque ? topico.estilo.bgGlow : ''
+                        }`}
+                    >
+                        <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
+                            <span className={topico.estilo.textoPrinc}>#</span> {secao.titulo}
+                        </h2>
 
-                {/* Aprofundamento */}
-                <section className="bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm">
-                    <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
-                        <span className={topico.estilo.textoPrinc}>#</span> Aprofundamento Técnico
-                    </h2>
-                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">
-                        {topico.conteudo.aprofundamento}
-                    </p>
-                </section>
+                        {/* Se for do tipo texto */}
+                        {secao.tipo === 'texto' && (
+                            <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">
+                                {secao.conteudo}
+                            </p>
+                        )}
 
-                {/* Exemplos */}
-                <section className="bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm">
-                    <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
-                        <span className={topico.estilo.textoPrinc}>#</span> Aplicações Práticas
-                    </h2>
-                    <ul className="list-none space-y-3">
-                        {topico.conteudo.exemplos.map((exemplo, idx) => (
-                            <li key={idx} className="text-slate-400 text-sm flex gap-3 items-start">
-                                <span className={`${topico.estilo.textoPrinc} font-mono mt-0.5`}>&gt;</span>
-                                <span>{exemplo}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
+                        {/* Se for do tipo lista */}
+                        {secao.tipo === 'lista' && Array.isArray(secao.conteudo) && (
+                            <ul className="list-none space-y-3">
+                                {secao.conteudo.map((item, idx) => (
+                                    <li key={idx} className="text-slate-400 text-sm flex gap-3 items-start">
+                                        <span className={`${topico.estilo.textoPrinc} font-mono mt-0.5`}>&gt;</span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </section>
+                ))}
             </main>
         </motion.div>
     );
