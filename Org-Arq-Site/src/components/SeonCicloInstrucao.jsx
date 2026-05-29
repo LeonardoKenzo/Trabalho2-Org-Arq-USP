@@ -6,6 +6,10 @@ import Visualizacao from '../assets/Visualizacao.jsx';
 export default function SeonCicloInstrucao(){
     const [passoAtivo, setPassoAtivo] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(false);
+    
+    // Novo estado para controlar as abas
+    const [abaAtiva, setAbaAtiva] = useState('visualizacao'); 
+    
     const passo = cicloData.passos[passoAtivo];
 
     // Efeito para controlar a reprodução automática e a pausa
@@ -29,7 +33,9 @@ export default function SeonCicloInstrucao(){
     }, [isAutoPlaying]);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 w-full items-start justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 w-full items-start">
+            
+            {/* COLUNA ESQUERDA: Texto e Controles */}
             <div className={`bg-slate-950/80 border ${passo.cores.borda} ${passo.cores.glow} p-6 rounded-xl transition-all duration-300 backdrop-blur-sm min-h-[410px] flex flex-col`}>
                 
                 <div className="flex justify-between items-center mb-6">
@@ -96,10 +102,44 @@ export default function SeonCicloInstrucao(){
                 </div>
             </div>
             
-            <Visualizacao passoAtivo={passoAtivo} />
-            
-            <div className="md:col-span-2 w-full max-w-xl">
-                <DiagramaCPU passoAtivo={passoAtivo} />
+            {/* COLUNA DIREITA: Sistema de Abas e Visualizações */}
+            <div className="flex flex-col w-full h-full min-h-[410px]">
+                
+                {/* Menu das Abas */}
+                <div className="flex space-x-2 border-b border-slate-800/60 mb-4 px-1">
+                    <button 
+                        onClick={() => setAbaAtiva('visualizacao')}
+                        className={`px-4 py-2 font-mono text-xs tracking-wider transition-all duration-200 border-b-2 ${
+                            abaAtiva === 'visualizacao' 
+                            ? 'text-cyan-400 border-cyan-400 bg-cyan-950/20' 
+                            : 'text-slate-500 border-transparent hover:text-slate-300 hover:bg-slate-900/50'
+                        }`}
+                    >
+                        [ S/Barramentos ]
+                    </button>
+                    <button 
+                        onClick={() => setAbaAtiva('diagrama')}
+                        className={`px-4 py-2 font-mono text-xs tracking-wider transition-all duration-200 border-b-2 ${
+                            abaAtiva === 'diagrama' 
+                            ? 'text-cyan-400 border-cyan-400 bg-cyan-950/20' 
+                            : 'text-slate-500 border-transparent hover:text-slate-300 hover:bg-slate-900/50'
+                        }`}
+                    >
+                        [ C/Barramentos ]
+                    </button>
+                </div>
+
+                {/* Área de Renderização Condicional */}
+                <div className="flex-1 w-full flex items-start justify-center animate-fade-in">
+                    {abaAtiva === 'visualizacao' ? (
+                        <Visualizacao passoAtivo={passoAtivo} />
+                    ) : (
+                        <div className="w-full max-w-xl">
+                            <DiagramaCPU passoAtivo={passoAtivo} />
+                        </div>
+                    )}
+                </div>
+
             </div>
         </div>
     );
