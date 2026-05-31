@@ -22,10 +22,10 @@ export default function SeonTeoria() {
                         </span>
                     </div>
                     <h3 className={introducaoData.arquitetura.tailwindClasses.termo}>
-                        <SplitText text={introducaoData.arquitetura.termo} duration={.8} splitType='words' delay={20}/>
+                        <SplitText text={introducaoData.arquitetura.termo} rootMargin={0} duration={.8} splitType='words' delay={20}/>
                     </h3>
                     <p className="text-slate-400 text-sm mt-2 mb-4 leading-relaxed">
-                        <SplitText text={introducaoData.arquitetura.definicao} textAlign='left' duration={.8} splitType='words' delay={20} />
+                        <SplitText text={introducaoData.arquitetura.definicao} rootMargin={0} textAlign='left' duration={.8} splitType='words' delay={20} />
                     </p>
                     <div className={introducaoData.arquitetura.tailwindClasses.detalhes}>
                         {introducaoData.arquitetura.detalhes.map((item, i) => (
@@ -46,14 +46,14 @@ export default function SeonTeoria() {
                         </span>
                     </div>
                     <h3 className={introducaoData.organizacao.tailwindClasses.termo}>
-                        <SplitText text={introducaoData.organizacao.termo} duration={.8} splitType='words' delay={20}/>
+                        <SplitText text={introducaoData.organizacao.termo} rootMargin={0} duration={.8} splitType='words' delay={20}/>
                     </h3>
                     <p className="text-slate-400  text-sm mt-2 mb-4 leading-relaxed">
-                       <SplitText text={introducaoData.organizacao.definicao} textAlign='left' duration={.8} splitType='words' delay={20} />
+                       <SplitText text={introducaoData.organizacao.definicao} rootMargin={0} textAlign='left' duration={.8} splitType='words' delay={20} />
                     </p>
                     <div className={introducaoData.organizacao.tailwindClasses.detalhes}>
                         {introducaoData.organizacao.detalhes.map((item, i) => (
-                        <div key={i} className="text-xs font-mono my-1 text-slate-400">└─ <SplitText text={item} duration={.8} delay={20} splitType='words'/></div>
+                        <div key={i} className="text-xs font-mono my-1 text-slate-400">└─ <SplitText rootMargin={0} text={item} duration={.8} delay={20} splitType='words'/></div>
                     ))}
                     </div>
                 </div>
@@ -63,7 +63,7 @@ export default function SeonTeoria() {
             <div className="bg-slate-950/30 border border-slate-800/80 rounded-xl p-6">
                 <h3 className="text-lg font-mono text-slate-200 mb-6 flex items-center gap-2">
                     <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-                    <SplitText text={diferencasData.sectionTitle} textAlign='left' duration={.8} splitType='words' delay={20} />
+                    <SplitText text={diferencasData.sectionTitle} rootMargin={0} textAlign='left' duration={.8} splitType='words' delay={20} />
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
                     {diferencasData.paradigmas.map((p) => (
@@ -80,18 +80,18 @@ export default function SeonTeoria() {
 
                             <div className='flex items-center gap-3 pr-24'>
                                 <h4 className={p.estilo.titulo}>
-                                    <SplitText text={p.nome} textAlign='left' duration={.8} splitType='words' delay={20} />
+                                    <SplitText text={p.nome} rootMargin={0} textAlign='left' duration={.8} splitType='words' delay={20} />
                                 </h4>
                                 <span className={p.estilo.badge}>PARADIGMA</span>
                             </div>
                             <p className="text-slate-400 text-sm leading-relaxed">
-                                <SplitText text={p.introducao} textAlign='left' duration={.8} splitType='words' delay={20} />
+                                <SplitText text={p.introducao} rootMargin={0} textAlign='left' duration={.8} splitType='words' delay={20} />
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                                 <div>
                                     <h5 className="text-xs font-mono text-emerald-400 font-bold mb-2">
-                                        <SplitText text={'PROS'} textAlign='left' duration={.8} splitType='words' delay={20} />
+                                        <SplitText text={'PROS'} rootMargin={0} textAlign='left' duration={.8} splitType='words' delay={20} />
                                     </h5>
                                     <ul className="space-y-1 text-xs text-slate-400 list-disc list-inside">
                                         {p.pros.map((pro, idx) => <li key={idx}>{pro}</li>)}
@@ -99,7 +99,7 @@ export default function SeonTeoria() {
                                 </div>
                                 <div>
                                     <h5 className="text-xs font-mono text-rose-400 font-bold mb-2">
-                                        <SplitText text={'CONTRAS'} textAlign='left' duration={.8} splitType='lines' delay={20} />
+                                        <SplitText text={'CONTRAS'} rootMargin={0} textAlign='left' duration={.8} splitType='lines' delay={20} />
                                     </h5>
                                     <ul className="space-y-1 text-xs text-slate-400 list-disc list-inside">
                                         {p.contras.map((contra, idx) => <li key={idx}>{contra}</li>)}
@@ -115,7 +115,7 @@ export default function SeonTeoria() {
             <div className='space-y-6'>
                 <h3 className="text-lg font-mono text-slate-200 flex items-center gap-2 border-b border-slate-800/60 pb-3">
                     <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-                    <SplitText text={vonNeumannData.title} textAlign='left' duration={.8} splitType='words' delay={20} />
+                    <SplitText text={vonNeumannData.title} rootMargin={0} textAlign='left' duration={.8} splitType='words' delay={20} />
                 </h3>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -131,10 +131,10 @@ export default function SeonTeoria() {
                         </div>
 
                         <h4 className="text-cyan-400 font-mono font-bold text-sm uppercase tracking-wider mb-2">
-                            <SplitText text={vonNeumannData.introducao.titulo} textAlign='left' duration={.8} splitType='words' delay={20} />
+                            <SplitText text={vonNeumannData.introducao.titulo} rootMargin={0} textAlign='left' duration={.8} splitType='words' delay={20} />
                         </h4>
                         <p className="text-slate-300 text-sm leading-relaxed">
-                            <SplitText text={vonNeumannData.introducao.descricao} textAlign='left' duration={.5} splitType='lines' delay={10} />
+                            <SplitText text={vonNeumannData.introducao.descricao} rootMargin={0} textAlign='left' duration={.5} splitType='lines' delay={10} />
                         </p>
                     </div>
 
@@ -150,13 +150,13 @@ export default function SeonTeoria() {
                         </div>
 
                         <h4 className="text-amber-500 font-mono font-bold text-sm uppercase tracking-wider mb-2">
-                            <SplitText text={vonNeumannData.gargalo.titulo} textAlign='left' duration={.8} splitType='words' delay={20} />
+                            <SplitText text={vonNeumannData.gargalo.titulo} rootMargin={0} textAlign='left' duration={.8} splitType='words' delay={20} />
                         </h4>
                         <p className="text-slate-300 text-sm max-w-3xl mb-2 leading-relaxed">
-                            <SplitText text={vonNeumannData.gargalo.descricao} textAlign='left' duration={.5} splitType='lines' delay={10} />
+                            <SplitText text={vonNeumannData.gargalo.descricao} rootMargin={0}  textAlign='left' duration={.5} splitType='lines' delay={10} />
                         </p>
                         <p className="text-slate-400 text-xs italic">
-                            <SplitText text={vonNeumannData.gargalo.consequencia} textAlign='left' duration={.5} splitType='lines' delay={10} />
+                            <SplitText text={vonNeumannData.gargalo.consequencia} rootMargin={0} textAlign='left' duration={.5} splitType='lines' delay={10} />
                         </p>
                     </div>
                 </div>
@@ -183,14 +183,14 @@ export default function SeonTeoria() {
 
                                 <div className='flex justify-between items-start mb-3 pr-6'>
                                     <h5 className="text-slate-200 font-mono font-bold text-base">
-                                        <SplitText text={comp.nome} textAlign='left' duration={.5} splitType='lines' delay={10} /> 
+                                        <SplitText text={comp.nome} rootMargin={0} textAlign='left' duration={.5} splitType='lines' delay={10} /> 
                                     </h5>
                                     <span className={vonNeumannData.tailwindClasses.componenteSigla}>
-                                        <SplitText text={comp.sigla} textAlign='left' duration={.5} splitType='lines' delay={10} />
+                                        <SplitText text={comp.sigla} rootMargin={0} textAlign='left' duration={.5} splitType='lines' delay={10} />
                                     </span>
                                 </div>
                                 <p className="text-slate-400 text-xs leading-relaxed">
-                                    <SplitText text={comp.funcao} textAlign='left' duration={.5} splitType='lines' delay={10} />
+                                    <SplitText text={comp.funcao} rootMargin={0} textAlign='left' duration={.5} splitType='lines' delay={10} />
                                 </p>
                             </div>
                         );
