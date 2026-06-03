@@ -162,19 +162,21 @@ export default function DetalhesTopico() {
                 </section>
 
                 {/* Exemplos */}
-                <section className="bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm">
-                    <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
-                        <span className={topico.estilo.textoPrinc}>#</span> Aplicações Práticas
-                    </h2>
-                    <ul className="list-none space-y-3">
-                        {topico.conteudo.exemplos.map((exemplo, idx) => (
-                            <li key={idx} className="text-slate-400 text-sm flex gap-3 items-start">
-                                <span className={`${topico.estilo.textoPrinc} font-mono mt-0.5`}>&gt;</span>
-                                <span>{exemplo}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
+                {topico.conteudo.exemplos && topico.conteudo.exemplos.length > 0 && (
+                    <section className="bg-slate-950/60 border border-slate-800 p-5 md:p-8 rounded-xl backdrop-blur-sm">
+                        <h2 className="text-sm font-mono text-slate-300 mb-4 border-b border-slate-800/80 pb-2 uppercase tracking-widest flex items-center gap-2">
+                            <span className={topico.estilo.textoPrinc}>#</span> Aplicações Práticas
+                        </h2>
+                        <ul className="list-none space-y-3">
+                            {topico.conteudo.exemplos.map((exemplo, idx) => (
+                                <li key={idx} className="text-slate-400 text-sm flex gap-3 items-start">
+                                    <span className={`${topico.estilo.textoPrinc} font-mono mt-0.5`}>&gt;</span>
+                                    <span>{exemplo}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+                )}
             </main>
         </motion.div>
     );
