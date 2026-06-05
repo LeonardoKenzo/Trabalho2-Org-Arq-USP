@@ -7,6 +7,8 @@ const SeonTeoria = lazy(() => import('./components/SeonTeoria.jsx'));
 const SeonCicloInstrucao = lazy(() => import('./components/SeonCicloInstrucao.jsx'));
 const DetalhesTopico = lazy(() => import('./components/DetalhesTopicos.jsx'));
 const Particles = lazy(() => import('./assets/Particles.jsx'));
+const Navbar = lazy(() => import('./components/Navbar.jsx'));
+
 
 const PARTICLE_COLORS = ["#22d3ee", "#ffffff", "#475569"];
 
@@ -111,6 +113,11 @@ export default function App() {
               </p>
             </Link>
           </header>
+
+          <Navbar/>
+
+         
+
 
           <AnimatedRoutes />
         </div>
