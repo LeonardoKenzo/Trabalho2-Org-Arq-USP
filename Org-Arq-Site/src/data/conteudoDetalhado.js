@@ -8,15 +8,28 @@ export const detalhesData = {
             borda: "border-cyan-500",
             bgGlow: "shadow-[0_0_30px_rgba(34,211,238,0.1)]"
         },
-        conteudo: {
-            historia: "BLA BLA BLA",
-            aprofundamento: "BLE BLE BLE",
-            exemplos: [
-                "Exemplo 1: Arquitetura x86 (Intel/AMD).",
-                "Exemplo 2: Arquitetura ARM (Dispositivos móveis e Apple Silicon).",
-                "Exemplo 3: [Insira um novo exemplo aqui]"
-            ]
-        }
+        secoes: [
+            {
+                titulo: "História e Origem",
+                tipo: "texto",
+                conteudo: "BLA BLA BLA",
+                destaque: true
+            },
+            {
+                titulo: "Aprofundamento Técnico",
+                tipo: "texto",
+                conteudo: "BLE BLE BLE"
+            },
+            {
+                titulo: "Aplicações Práticas",
+                tipo: "lista",
+                conteudo: [
+                    "Exemplo 1: Arquitetura x86 (Intel/AMD).",
+                    "Exemplo 2: Arquitetura ARM (Dispositivos móveis e Apple Silicon).",
+                    "Exemplo 3: [Insira um novo exemplo aqui]"
+                ]
+            }
+        ]
     },
     organizacao: {
         titulo: "Organização de Computadores",
@@ -27,11 +40,24 @@ export const detalhesData = {
             borda: "border-emerald-500",
             bgGlow: "shadow-[0_0_30px_rgba(16,185,129,0.1)]"
         },
-        conteudo: {
-            historia: "BLA BLA BLA",
-            aprofundamento: "BLE BLE BLE",
-            exemplos: ["Sinais de controle", "Interfaces de periféricos"]
-        }
+        secoes: [
+            {
+                titulo: "História e Origem",
+                tipo: "texto",
+                conteudo: "BLA BLA BLA",
+                destaque: true
+            },
+            {
+                titulo: "Aprofundamento Técnico",
+                tipo: "texto",
+                conteudo: "BLE BLE BLE"
+            },
+            {
+                titulo: "Aplicações Práticas",
+                tipo: "lista",
+                conteudo: ["Sinais de controle", "Interfaces de periféricos"]
+            }
+        ]
     },
     risc: {
         titulo: "Arquitetura RISC",
@@ -42,11 +68,24 @@ export const detalhesData = {
             borda: "border-orange-500",
             bgGlow: "shadow-[0_0_30px_rgba(251,146,60,0.1)]"
         },
-        conteudo: {
-            historia: "BLA BLA BLA",
-            aprofundamento: "BLE BLE BLE",
-            exemplos: ["Sinais de controle", "Interfaces de periféricos"]
-        }
+        secoes: [
+            {
+                titulo: "História e Origem",
+                tipo: "texto",
+                conteudo: "BLA BLA BLA",
+                destaque: true
+            },
+            {
+                titulo: "Aprofundamento Técnico",
+                tipo: "texto",
+                conteudo: "BLE BLE BLE"
+            },
+            {
+                titulo: "Aplicações Práticas",
+                tipo: "lista",
+                conteudo: ["Sinais de controle", "Interfaces de periféricos"]
+            }
+        ]
     },
     cisc: {
         titulo: "Arquitetura CISC",
@@ -57,11 +96,24 @@ export const detalhesData = {
             borda: "border-red-500",
             bgGlow: "shadow-[0_0_30px_rgba(239,68,68,0.1)]"
         },
-        conteudo: {
-            historia: "BLA BLA BLA",
-            aprofundamento: "BLE BLE BLE",
-            exemplos: ["Sinais de controle", "Interfaces de periféricos"]
-        }
+        secoes: [
+            {
+                titulo: "História e Origem",
+                tipo: "texto",
+                conteudo: "BLA BLA BLA",
+                destaque: true
+            },
+            {
+                titulo: "Aprofundamento Técnico",
+                tipo: "texto",
+                conteudo: "BLE BLE BLE"
+            },
+            {
+                titulo: "Aplicações Práticas",
+                tipo: "lista",
+                conteudo: ["Sinais de controle", "Interfaces de periféricos"]
+            }
+        ]
     },
     vonneumann: {
         titulo: "Arquitetura de Von Neumann",
@@ -72,11 +124,24 @@ export const detalhesData = {
             borda: "border-purple-500",
             bgGlow: "shadow-[0_0_30px_rgba(168,85,247,0.1)]"
         },
-        conteudo: {
-            historia: "BLA BLA BLA",
-            aprofundamento: "BLE BLE BLE",
-            exemplos: ["Sinais de controle", "Interfaces de periféricos"]
-        }
+        secoes: [
+            {
+                titulo: "História e Origem",
+                tipo: "texto",
+                conteudo: "BLA BLA BLA",
+                destaque: true
+            },
+            {
+                titulo: "Aprofundamento Técnico",
+                tipo: "texto",
+                conteudo: "BLE BLE BLE"
+            },
+            {
+                titulo: "Aplicações Práticas",
+                tipo: "lista",
+                conteudo: ["Sinais de controle", "Interfaces de periféricos"]
+            }
+        ]
     },
     ram: {
         titulo: "Memória RAM",
@@ -87,11 +152,24 @@ export const detalhesData = {
             borda: "border-cyan-500",
             bgGlow: "shadow-[0_0_30px_rgba(34,211,238,0.1)]"
         },
-        conteudo: {
-            historia: "BLA BLA BLA",
-            aprofundamento: "BLE BLE BLE",
-            exemplos: ["Sinais de controle", "Interfaces de periféricos"]
-        }
+        secoes: [
+            {
+                titulo: "História e Origem",
+                tipo: "texto",
+                conteudo: "BLA BLA BLA",
+                destaque: true
+            },
+            {
+                titulo: "Aprofundamento Técnico",
+                tipo: "texto",
+                conteudo: "BLE BLE BLE"
+            },
+            {
+                titulo: "Aplicações Práticas",
+                tipo: "lista",
+                conteudo: ["Sinais de controle", "Interfaces de periféricos"]
+            }
+        ]
     },
     ula: {
         titulo: "Unidade Lógica e Aritmética",
@@ -102,11 +180,24 @@ export const detalhesData = {
             borda: "border-purple-500",
             bgGlow: "shadow-[0_0_30px_rgba(168,85,247,0.1)]"
         },
-        conteudo: {
-            historia: "BLA BLA BLA",
-            aprofundamento: "BLE BLE BLE",
-            exemplos: ["Sinais de controle", "Interfaces de periféricos"]
-        }
+        secoes: [
+            {
+                titulo: "História e Origem",
+                tipo: "texto",
+                conteudo: "BLA BLA BLA",
+                destaque: true
+            },
+            {
+                titulo: "Aprofundamento Técnico",
+                tipo: "texto",
+                conteudo: "BLE BLE BLE"
+            },
+            {
+                titulo: "Aplicações Práticas",
+                tipo: "lista",
+                conteudo: ["Sinais de controle", "Interfaces de periféricos"]
+            }
+        ]
     },
     uc: {
         titulo: "Unidade de Controle",
@@ -117,11 +208,24 @@ export const detalhesData = {
             borda: "border-green-500",
             bgGlow: "shadow-[0_0_30px_rgba(34,151,84,0.1)]"
         },
-        conteudo: {
-            historia: "BLA BLA BLA",
-            aprofundamento: "BLE BLE BLE",
-            exemplos: ["Sinais de controle", "Interfaces de periféricos"]
-        }
+        secoes: [
+            {
+                titulo: "História e Origem",
+                tipo: "texto",
+                conteudo: "BLA BLA BLA",
+                destaque: true
+            },
+            {
+                titulo: "Aprofundamento Técnico",
+                tipo: "texto",
+                conteudo: "BLE BLE BLE"
+            },
+            {
+                titulo: "Aplicações Práticas",
+                tipo: "lista",
+                conteudo: ["Sinais de controle", "Interfaces de periféricos"]
+            }
+        ]
     },
     io: {
         titulo: "Entrada/Saída",
@@ -132,11 +236,23 @@ export const detalhesData = {
             borda: "border-blue-500",
             bgGlow: "shadow-[0_0_30px_rgba(59,130,246,0.1)]"
         },
-        conteudo: {
-            historia: "BLA BLA BLA",
-            aprofundamento: "BLE BLE BLE",
-            exemplos: ["Sinais de controle", "Interfaces de periféricos"]
-        }
-    },
-    // Adicionem os blocos para 'risc', 'cisc' e 'von-neumann' seguindo o mesmo padrão...
+        secoes: [
+            {
+                titulo: "História e Origem",
+                tipo: "texto",
+                conteudo: "BLA BLA BLA",
+                destaque: true
+            },
+            {
+                titulo: "Aprofundamento Técnico",
+                tipo: "texto",
+                conteudo: "BLE BLE BLE"
+            },
+            {
+                titulo: "Aplicações Práticas",
+                tipo: "lista",
+                conteudo: ["Sinais de controle", "Interfaces de periféricos"]
+            }
+        ]
+    }
 };
