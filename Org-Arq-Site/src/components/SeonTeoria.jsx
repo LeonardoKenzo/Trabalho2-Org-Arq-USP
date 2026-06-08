@@ -121,7 +121,7 @@ export default function SeonTeoria() {
                 <div className="grid md:grid-cols-2 gap-6">
                     {/* Seção Nova: O que é a arquitetura de von neymmnan */}
                     <div 
-                        onClick={() => navigate('/topico/von-neumann')}
+                        onClick={() => navigate('/topico/vonneumann')}
                         className="bg-slate-950/40 border border-slate-800/80 p-5 rounded-xl cursor-pointer hover:bg-slate-900/40 hover:border-cyan-500/30 hover:scale-[1.01] transition-all group relative"
                     >
                         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -140,7 +140,7 @@ export default function SeonTeoria() {
 
                     {/* Card do Gargalo */}
                     <div 
-                        onClick={() => navigate('/topico/von-neumann')}
+                        onClick={() => navigate('/topico/vonneumann')}
                         className="bg-amber-500/5 border border-amber-500/20 p-5 rounded-xl cursor-pointer hover:bg-amber-500/10 hover:border-amber-500/40 hover:scale-[1.01] transition-all group relative"
                     >
                         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
