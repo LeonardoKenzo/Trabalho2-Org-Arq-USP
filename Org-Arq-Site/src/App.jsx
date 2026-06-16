@@ -10,6 +10,8 @@ const Particles = lazy(() => import('./assets/Particles.jsx'));
 const Navbar = lazy(()=> import('./components/Navbar.jsx'))
 
 
+
+
 const PARTICLE_COLORS = ["#22d3ee", "#ffffff", "#475569"];
 
 // Definição da animação padrão das páginas (deslizar e esmaecer)
