@@ -7,6 +7,8 @@ const SeonTeoria = lazy(() => import('./components/SeonTeoria.jsx'));
 const SeonCicloInstrucao = lazy(() => import('./components/SeonCicloInstrucao.jsx'));
 const DetalhesTopico = lazy(() => import('./components/DetalhesTopicos.jsx'));
 const Particles = lazy(() => import('./assets/Particles.jsx'));
+const Navbar = lazy(()=> import('./components/Navbar.jsx'))
+
 
 
 
@@ -114,7 +116,7 @@ export default function App() {
             </Link>
           </header>
 
-          
+          <Navbar/>
 
          
 
