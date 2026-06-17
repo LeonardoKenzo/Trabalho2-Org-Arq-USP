@@ -108,7 +108,7 @@ export default function App() {
           <header className="mb-12 border-b border-slate-800 pb-6 flex justify-between items-center">
             <Link to="/" className="group">
               <h1 className="text-2xl md:text-3xl font-black tracking-wider text-cyan-400 font-mono group-hover:text-cyan-300 transition-colors">
-                  Pré-Visualização
+                  Vendo dentro dos computadores
               </h1>
               <p className="text-xs text-slate-400 mt-1 uppercase tracking-widest font-mono">
                   Arquitetura de Computadores

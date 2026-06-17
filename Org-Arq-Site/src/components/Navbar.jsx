@@ -9,12 +9,12 @@ const links = [
 
     },
     {
-        nome:'arquitetura',
+        nome:'Arquitetura',
         url:'/topico/arquitetura',
         color:'hover:text-blue-500'
     },
     {
-        nome:'organizacao',
+        nome:'Organizacao',
         url:'/topico/organizacao',
         color:'hover:text-green-500'
     },
