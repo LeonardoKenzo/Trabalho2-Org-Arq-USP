@@ -41,7 +41,8 @@ function HomePage() {
       exit="out"
       variants={pageVariants}
       transition={pageTransition}
-    >
+    > 
+       <Navbar/>
       <section className='mb-6 border-b border-slate-800 pb-6'>
         <h2 className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
           Teoria
@@ -116,7 +117,7 @@ export default function App() {
             </Link>
           </header>
 
-          <Navbar/>
+       
 
          
 

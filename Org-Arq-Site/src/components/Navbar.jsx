@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { detalhesData } from "../data/conteudoDetalhado";
-
+import { useState } from "react";
 const links = [
     {
         nome:'HOME',
@@ -55,28 +55,43 @@ const links = [
     }
 ]
 
-
-export default function Navbar()
+function nav_button(show,setShow)
 {
     return (
-        <div className="flex  items-center w-fit m-auto p-4 my-8 h-18 rounded-2xl bg-black/15 border border-black hover:border-white/30  ease-in-out transition-[100] ">
-            <li className="m-auto list-none flex flex-row gap-x-8">
-                
-                {links?.map((e,idx)=>(
-                    <Link to={e.url}>
-
-                         <ul key={idx} className={`font-mono hover:scale-[1.1] ${e.color} transition-[100] cursor-pointer z-40 text-white`}>
-                            {e.nome}
-                        </ul>
-                    </Link>
-                   
-
-                ))}
-               
-              
-        
-               
-            </li>
-        </div>
+        <button className ='font-mono text-2xl text-gray-100/50 cursor-pointer hover:[scale-110] transition-all duration-200' onClick={()=>setShow(e=>!e)}> {show ? '✕' : '☰'} </button>
     )
+}
+export default function Navbar()
+{   
+
+    const [show, setShow] = useState(false);
+    return (
+
+        <nav className="w-full px-4 my-8">
+            {nav_button(show,setShow)}
+
+            <div
+                className={`
+                overflow-hidden
+                transition-all
+                duration-500
+                ease-in-out
+                ${show ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"}
+                `}
+            >
+                <ul className="flex flex-wrap justify-center gap-4 md:gap-8 p-4 rounded-2xl bg-black/15 border border-black hover:border-white/30">
+                {links.map((e, idx) => (
+                    <li key={idx}>
+                    <Link
+                        to={e.url}
+                        className={`font-mono text-sm md:text-base text-white hover:scale-110 transition-all duration-200 inline-block ${e.color || ""}`}
+                    >
+                        {e.nome}
+                    </Link>
+                    </li>
+                ))}
+                </ul>
+            </div>
+        </nav>
+    );
 }
